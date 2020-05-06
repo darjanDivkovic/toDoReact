@@ -5,6 +5,10 @@
 
 :root {
   --grey : #27282C;
+  --lgrey : #A8A9AB;
+  --lightblue : #38DDCD;
+  --white: #F9FAFC;
+
 }
 
 body {
@@ -18,8 +22,8 @@ body {
   padding: 0;  
 
   font-family: 'Archivo';
- position: relative;
- overflow: auto;
+  position: relative;
+  overflow: auto;
 }
 
 
@@ -33,4 +37,48 @@ body {
   height: 85vh;
   background-color: var(--grey);
   border-radius: 10px;
+
+}
+
+.header {
+  color: var(--white);
+  margin-top: 50px;
+  margin-left: 130px;
+  font-size: 25px;
+}
+
+.toDoListContainer {
+  margin-left: 360px;
+  margin-top: 50px;
+  color: var(--white);
+}
+
+.toDoListContainer input {
+  width: 60%;
+  height: 40px;
+  background-color: #212224;
+  border-radius: 10px;
+  border: none;
+  color: var(--gray);
+  outline: none;
+  text-align: center;
+}
+
+.toDoListContainer button {
+  
+  padding: 11px;
+  margin-left: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--lightblue);
+  color: var(--lightblue);
+  font-weight: bold;
+  font-size: 13px;
+  background-color: #212224;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.toDoListContainer button:hover {
+  background-color: var(--lightblue);
+  color: var(--white);
 }
