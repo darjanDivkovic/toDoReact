@@ -98,4 +98,9 @@ body {
 .todoitems-container {
   width: 70%;
   height: 300px;
+  margin-left: -20px;
+}
+
+.todoItem {
+  border-bottom: 1px solid #212224;
 }
