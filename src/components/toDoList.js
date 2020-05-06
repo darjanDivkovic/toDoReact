@@ -30,6 +30,10 @@ export default class toDoList extends Component {
         this.setState({currentInput : ''});
     }
 
+    handleDeleteTodo(todoToDelete){
+        console.log(todoToDelete);
+    }
+
     render() {
         return (
             <div className='toDoListContainer'>
@@ -39,7 +43,10 @@ export default class toDoList extends Component {
                     <ul>
                         {
                             this.state.todos.map((todo)=> {
-                            return <ToDoItem content={todo.content} />
+                            return <ToDoItem key={todo.id} 
+                                             id={todo.id}
+                                             content={todo.content} 
+                                             delteTodo={this.handleDeleteTodo}/>
                             })
                         }
                     </ul>
