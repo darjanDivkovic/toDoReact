@@ -16,6 +16,7 @@ export default class toDoList extends Component {
         }
         this.handleInput = this.handleInput.bind(this);
         this.handleAddTodo = this.handleAddTodo.bind(this);
+        this.handleDeleteTodo = this.handleDeleteTodo.bind(this);
     }
 
     handleInput(e){
@@ -32,6 +33,11 @@ export default class toDoList extends Component {
 
     handleDeleteTodo(todoToDelete){
         console.log(todoToDelete);
+        let newTodos = this.state.todos.filter((todo) => {
+            if(todo.id === todoToDelete) return false;
+            else return true;
+        })
+        this.setState({todos : newTodos})
     }
 
     render() {
@@ -46,7 +52,7 @@ export default class toDoList extends Component {
                             return <ToDoItem key={todo.id} 
                                              id={todo.id}
                                              content={todo.content} 
-                                             delteTodo={this.handleDeleteTodo}/>
+                                             deleteTodo={this.handleDeleteTodo}/>
                             })
                         }
                     </ul>
