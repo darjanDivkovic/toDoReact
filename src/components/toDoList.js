@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 
+import nextID from 'react-id-generator';
 import ToDoItem from './ToDoItem';
+
 
 export default class toDoList extends Component {
     constructor(props){
         super(props);
         this.state = {
             todos: [
-                {id: 1, content: 'Eat'},
-                {id: 2, content: 'Code'},
-                {id: 3, content: 'Sleep'},
+                {id: nextID(), content: 'Eat'},
+                {id: nextID(), content: 'Code'},
+                {id: nextID(), content: 'Sleep'},
             ],
 
             currentInput : '',
@@ -24,7 +26,7 @@ export default class toDoList extends Component {
     }
 
     handleAddTodo(){
-        let newTodo = {id: 4, content: this.state.currentInput};
+        let newTodo = {id: nextID(), content: this.state.currentInput};
         let newTodos = Object.assign([], this.state.todos).concat(newTodo);
         
         this.setState({todos: newTodos });

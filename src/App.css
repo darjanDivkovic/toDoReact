@@ -107,12 +107,12 @@ body {
 }
 
 .todoItem-container .xButton {
-  height: 40px;
-  padding: 15px;
+  height: 35px;
+  width: 75px;
   line-height: 0;
   margin-left: auto;
-  margin-right: 20px;
-  margin-top: 15px;
+  margin-right: 8px;
+  margin-top: 10px;
   border-color: var(--red);
   color: var(--red);
   font-weight: bolder;
