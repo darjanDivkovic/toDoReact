@@ -15,10 +15,12 @@ export default class toDoList extends Component {
             ],
 
             currentInput : '',
+            editInput : '',
         }
         this.handleInput = this.handleInput.bind(this);
         this.handleAddTodo = this.handleAddTodo.bind(this);
         this.handleDeleteTodo = this.handleDeleteTodo.bind(this);
+        this.saveEdit = this.saveEdit.bind(this);
     }
 
     handleInput(e){
@@ -42,10 +44,30 @@ export default class toDoList extends Component {
         this.setState({todos : newTodos})
     }
 
+    saveEdit(idToChangeContent){
+        // Take id and in todos change content of obj with that id
+        console.log(idToChangeContent);
+        
+        let newTodos = this.state.todos.map((todo)=> {
+            if(todo.id === idToChangeContent) {
+                todo.content = this.state.editInput;
+                return todo;
+            }
+            else return todo;
+        })
+
+       
+        // Set new state
+        this.setState({todos : newTodos});
+        // clear edit input
+        this.setState({editInput : ''}); 
+        
+    }
+
     render() {
         return (
             <div className='toDoListContainer'>
-               <input type='text' onChange={this.handleInput} value={this.state.currentInput}placeholder='ADD TODO' name='currentInput'/>
+               <input type='text' onChange={this.handleInput} value={this.state.currentInput} placeholder='ADD TODO' name='currentInput'/>
                <button onClick={this.handleAddTodo} >ADD TODO</button>
                <div className='todoitems-container'>
                     <ul>
@@ -54,11 +76,14 @@ export default class toDoList extends Component {
                             return <ToDoItem key={todo.id} 
                                              id={todo.id}
                                              content={todo.content} 
-                                             deleteTodo={this.handleDeleteTodo}/>
+                                             deleteTodo={this.handleDeleteTodo}
+                                             handleInput={this.handleInput}
+                                             saveEdit={this.saveEdit}/>
                             })
                         }
                     </ul>
                </div>
+               <p>{this.state.editInput}</p>
             </div>
         )
     }
