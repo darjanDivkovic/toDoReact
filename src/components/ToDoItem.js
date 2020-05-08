@@ -19,6 +19,7 @@ export default class ToDoItem extends Component {
     if (this.state.editToggler) {
       edit = <EditorToDo placeholder={this.props.content}
                          handleInput={this.props.handleInput}
+                         handleEdit={this.handleEdit}
                          id={this.props.id} 
                          saveEdit={this.props.saveEdit}/>;
     }

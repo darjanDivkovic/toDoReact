@@ -2,6 +2,10 @@ import React from 'react'
 
 export default function EditorToDo(props) {
 
+    function handleClick(){
+        props.saveEdit(props.id);
+        props.handleEdit();
+    }
 
     return (
         <div className='editor-container'>
@@ -11,7 +15,7 @@ export default function EditorToDo(props) {
                       onChange={props.handleInput}
                       name='editInput'
                       />
-            <button className='save-button' onClick={props.saveEdit.bind(this, props.id)}>SAVE</button>
+            <button className='save-button' onClick={handleClick.bind(this, props.id)}>SAVE</button>
         </div>
     )
 }
