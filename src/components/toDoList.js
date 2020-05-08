@@ -49,7 +49,7 @@ export default class toDoList extends Component {
         console.log(idToChangeContent);
         
         let newTodos = this.state.todos.map((todo)=> {
-            if(todo.id === idToChangeContent) {
+            if(todo.id === idToChangeContent && this.state.editInput !== '') {
                 todo.content = this.state.editInput;
                 return todo;
             }
@@ -83,7 +83,6 @@ export default class toDoList extends Component {
                         }
                     </ul>
                </div>
-               <p>{this.state.editInput}</p>
             </div>
         )
     }
