@@ -30,13 +30,12 @@ body {
 }
 
 
-
 .main-container {
 
-  display: inline-block;
+ 
   margin-top: 75px;
   margin-left: 75px;
-  width: 90%;
+  margin-right: 75px;
   height: 85vh;
   background-color: var(--grey);
   border-radius: 10px;
@@ -45,6 +44,7 @@ body {
 
 .header-container {
   display: flex;
+
 }
 
 .header {
@@ -55,7 +55,7 @@ body {
 }
 
 .clock {
-  margin-top: 35px;
+  margin-top: 45px;
   margin-left: auto;
   margin-right: 120px;
   color: var(--white);

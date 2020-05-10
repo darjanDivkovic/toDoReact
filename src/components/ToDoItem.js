@@ -25,7 +25,7 @@ export default class ToDoItem extends Component {
     }
 
     return (
-      <div className="todoItem-container">
+      <li className="todoItem-container">
         <h2 className="content">{this.props.content}</h2>
         {edit}
         <div className="todoItem-buttons-container">
@@ -39,7 +39,7 @@ export default class ToDoItem extends Component {
             DELETE
           </button>
         </div>
-      </div>
+        </li>
     );
   }
 }
