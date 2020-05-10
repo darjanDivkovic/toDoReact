@@ -32,8 +32,8 @@ body {
 .main-container {
   min-height: 90vh;
   margin-top: 60px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 60px;
+  margin-right: 60px;
   background-color: var(--grey);
   border-radius: 10px;
 }
