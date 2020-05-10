@@ -60,7 +60,8 @@ export default class toDoList extends Component {
 
   render() {
     return (
-      <div className="toDoListContainer">
+      <div className="todo-list-container">
+        <div className="add-todo">
         <input
           type="text"
           onChange={this.handleInput}
@@ -68,7 +69,8 @@ export default class toDoList extends Component {
           placeholder="ADD TODO"
           name="currentInput"
         />
-        <button onClick={this.handleAddTodo}>ADD TODO</button>
+        <button onClick={this.handleAddTodo} className="btn-add-todo">ADD TODO</button>
+        </div>
         <div className="todoitems-container">
           <ul>
             {this.state.todos.map((todo) => {

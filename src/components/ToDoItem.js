@@ -25,18 +25,18 @@ export default class ToDoItem extends Component {
     }
 
     return (
-      <li className="todoItem-container">
+      <li className="todo-item-container">
         <h2 className="content">{this.props.content}</h2>
         {edit}
-        <div className="todoItem-buttons-container">
+        <div className="todo-item-buttons-container">
           <button onClick={this.handleEdit} className="edit">
-            EDIT
+            edit
           </button>
           <button
             onClick={this.props.deleteTodo.bind(this, this.props.id)}
             className="xButton"
           >
-            DELETE
+            delete
           </button>
         </div>
         </li>
