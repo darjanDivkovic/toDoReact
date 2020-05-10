@@ -8,13 +8,14 @@ export default class toDoList extends Component {
     super(props);
     this.state = {
       todos: [
-        { id: nextID(), content: "Eat" },
+        { id: nextID(), content: "This is a long long long long long long long long todo" },
         { id: nextID(), content: "Code" },
         { id: nextID(), content: "Sleep" },
       ],
 
       currentInput: "",
       editInput: "",
+
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleAddTodo = this.handleAddTodo.bind(this);
@@ -44,6 +45,7 @@ export default class toDoList extends Component {
   }
 
   saveEdit(idToChangeContent) {
+   
     // Take id and in todos change content of obj with that id
     let newTodos = this.state.todos.map((todo) => {
       if (todo.id === idToChangeContent && this.state.editInput !== "") {
