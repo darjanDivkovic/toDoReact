@@ -8,9 +8,10 @@ export default class ToDoItem extends Component {
     this.state = {
       editToggler: false,
     };
-    this.handleEdit = this.handleEdit.bind(this);
+    this.toggleEdit = this.toggleEdit.bind(this);
   }
-  handleEdit() {
+
+  toggleEdit() {
     this.setState({ editToggler: !this.state.editToggler });
   }
 
@@ -19,7 +20,7 @@ export default class ToDoItem extends Component {
     if (this.state.editToggler) {
       edit = <EditorToDo placeholder={this.props.content}
                          handleInput={this.props.handleInput}
-                         handleEdit={this.handleEdit}
+                         toggleEdit={this.toggleEdit}
                          id={this.props.id} 
                          saveEdit={this.props.saveEdit}/>;
     }
@@ -31,7 +32,7 @@ export default class ToDoItem extends Component {
         {edit}
         </div>
         <div className="todo-item-buttons-container">
-          <button onClick={this.handleEdit} className="edit">
+          <button onClick={this.toggleEdit} className="edit">
             edit
           </button>
           <button

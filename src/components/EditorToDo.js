@@ -1,21 +1,38 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function EditorToDo(props) {
+export default class EditorToDo extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            value : props.placeholder,
+        }
 
-    function handleClick(){
-        props.saveEdit(props.id);
-        props.handleEdit();
+        this.handleEditInput = this.handleEditInput.bind(this);
     }
 
-    return (
-        <div className='editor-container'>
-            <input type='text' 
-                      placeholder={props.placeholder} 
-                      className='edit-input'
-                      onChange={props.handleInput}
-                      name='editInput'
-                      />
-            <button className='save-button' onClick={handleClick.bind(this, props.id)}>SAVE</button>
-        </div>
-    )
+    handleClick(){
+        this.props.saveEdit(this.props.id, this.state.value);
+        this.props.toggleEdit();
+    }
+
+    handleEditInput(e){
+        this.setState({value : e.target.value});
+    }
+    
+
+    render() {
+        return (
+            <div className='editor-container'>
+             <input type='text' 
+                    value={this.state.value} 
+                    className='edit-input'
+                    onChange={this.handleEditInput}
+                    name='editInput'
+                   />
+             <button className='save-button' onClick={this.handleClick.bind(this, this.props.id, this.state.value)}>SAVE</button>
+            </div>
+        )
+    }
 }
+
+

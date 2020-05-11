@@ -44,12 +44,12 @@ export default class toDoList extends Component {
     this.setState({ todos: newTodos });
   }
 
-  saveEdit(idToChangeContent) {
-   
+  saveEdit(idToChangeContent, newTodoContent) {
+    console.log(newTodoContent);
     // Take id and in todos change content of obj with that id
     let newTodos = this.state.todos.map((todo) => {
-      if (todo.id === idToChangeContent && this.state.editInput !== "") {
-        todo.content = this.state.editInput;
+      if (todo.id === idToChangeContent && newTodoContent !== "") {
+        todo.content = newTodoContent;
         return todo;
       } else return todo;
     });
