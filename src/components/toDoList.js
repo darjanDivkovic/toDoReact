@@ -1,17 +1,13 @@
 import React, { Component } from "react";
-
 import nextID from "react-id-generator";
+
 import ToDoItem from "./ToDoItem";
 
 export default class toDoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: [
-        { id: nextID(), content: "This is a long long long long long long long long todo" },
-        { id: nextID(), content: "Code" },
-        { id: nextID(), content: "Sleep" },
-      ],
+      todos: this.props.todos,
 
       currentInput: "",
       editInput: "",

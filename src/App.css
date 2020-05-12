@@ -46,6 +46,7 @@ body {
 .header {
   margin-left: 60px;
   margin-top: 30px;
+  font-size: 35px;
 }
 
 .clock {
@@ -53,6 +54,43 @@ body {
   margin-right: 60px;
   margin-top: 30px;
 }
+
+.link-container {
+  background-color: var(--dgray);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: 220px;
+  left: 120px;
+  align-items: center;
+  border-radius: 10px;
+  
+}
+
+.link {
+  font-size: 15px;
+  color: var(--lgrey);
+  text-decoration: none;
+  margin-top: 25px;
+  transition: 0.5s;
+}
+
+.link:after {
+  display:block;
+  content: '';
+  border-bottom: 2px solid var(--lightblue);
+  transform : scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.link:hover:after {
+  transform: scaleX(1.2);
+}
+
+
+
 
 @media only screen and (max-width: 600px) {
   .header-container {
@@ -129,7 +167,7 @@ button {
   margin-top: 30px;
   height: 300px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .todo-item-container {
@@ -155,13 +193,25 @@ button {
   font-size: 20px;
 }
 
-
-
 .editor-container {
+  border: 2px solid white;
+  position: absolute;
+  top: 5px;
+  width: 100%;
+
 }
 
 .editor-container input {
- 
+  font-size: 20px;
+  width: 100%;
+  min-height: 100%;
+  
+}
+
+.editor-container .save-button {
+  position: absolute;
+  right: -100px;
+
 }
 
 .todo-item-buttons-container {
