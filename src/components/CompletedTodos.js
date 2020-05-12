@@ -19,6 +19,7 @@ export default class CompletedTodos extends Component {
               <li className="todo-item-container">
                 <div className="content-container">
                   <h2 className="content">{todo.content}</h2>
+                  <h4><span>Completed at: </span>{todo.completedTime}</h4>
                 </div>
                 <div className="todo-item-buttons-container">
                   <button className="xButton" >

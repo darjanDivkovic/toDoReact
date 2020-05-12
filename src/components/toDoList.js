@@ -29,6 +29,9 @@ export default class toDoList extends Component {
 
     this.setState({ todos: newTodos });
     this.setState({ currentInput: "" });
+
+    //Update upper state
+    this.props.updateMainTodoState(newTodos);
   }
 
   handleDeleteTodo(todoToDelete) {
@@ -38,6 +41,8 @@ export default class toDoList extends Component {
       else return true;
     });
     this.setState({ todos: newTodos });
+    //Update upper state
+    this.props.updateMainTodoState(newTodos);
   }
 
   saveEdit(idToChangeContent, newTodoContent) {
@@ -54,6 +59,8 @@ export default class toDoList extends Component {
     this.setState({ todos: newTodos });
     // clear edit input
     this.setState({ editInput: "" });
+    //Update upper state
+    this.props.updateMainTodoState(newTodos);
   }
 
   render() {
@@ -80,6 +87,7 @@ export default class toDoList extends Component {
                   deleteTodo={this.handleDeleteTodo}
                   handleInput={this.handleInput}
                   saveEdit={this.saveEdit}
+                  addToCompletedTodos={this.props.addToCompletedTodos}
                 />
               );
             })}

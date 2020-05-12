@@ -15,6 +15,19 @@ export default class ToDoItem extends Component {
     this.setState({ editToggler: !this.state.editToggler });
   }
 
+  completeTodo(completedID, content) {
+    let date = new Date();
+
+    console.log(completedID);
+    // delete it from state here
+    this.props.deleteTodo(completedID);
+
+    let completedTodo = { id : completedID, content : content, completedTime : date.toLocaleTimeString()};
+
+    // Add it to completed todos
+    this.props.addToCompletedTodos(completedTodo);
+  }
+
   render() {
     let edit;
     if (this.state.editToggler) {
@@ -28,6 +41,9 @@ export default class ToDoItem extends Component {
     return (
       <li className="todo-item-container">
         <div className='content-container'>
+        <button onClick={this.completeTodo.bind(this, this.props.id, this.props.content)}>
+        ✔
+        </button>
         <h2 className="content">{this.props.content}</h2>
         {edit}
         </div>
