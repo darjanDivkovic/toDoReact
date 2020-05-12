@@ -136,6 +136,7 @@ button {
   height: 40px;
   border-radius: 10px;
   transition: 0.5s;
+
 }
 
 .todo-list-container input {
@@ -163,11 +164,14 @@ button {
 }
 
 .todoitems-container {
-
   margin-top: 30px;
   height: 300px;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.completed-at {
+  color: var(--orange);
 }
 
 .todo-item-container {
@@ -186,6 +190,11 @@ button {
 .content-container {
   position: relative;
   display: flex;
+}
+
+.content-container-completeds {
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
@@ -239,7 +248,9 @@ button {
   color: var(--red);
   width: 70px;
   margin-right: 20px;
+  margin-top: 10px;
 }
+
 
 .edit {
   border: 2px solid var(--orange);
