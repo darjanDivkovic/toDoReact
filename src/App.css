@@ -185,7 +185,7 @@ button {
 
 .content-container {
   position: relative;
-
+  display: flex;
 }
 
 .content {
@@ -216,6 +216,22 @@ button {
 
 .todo-item-buttons-container {
   margin-left: auto;
+}
+
+.checkButton {
+  border: 2px solid var(--green);
+  margin-right: 20px;
+  margin-top: 7px;
+  line-height: 1;
+  font-size: 17px;
+  color: var(--green);
+  transition: 0.5s;
+}
+
+.checkButton:hover {
+  background-color: var(--green);
+  color: var(--white);
+  transform: scale(1.2);
 }
 
 .xButton {
