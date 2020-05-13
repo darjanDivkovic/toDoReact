@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import nextID from "react-id-generator";
 import { BrowserRouter as Router } from "react-router-dom";
-import Route from "react-router-dom/Route";
+import { Route } from "react-router-dom";
 
 import Header from './Header';
 import ToDoList from './toDoList';
@@ -42,8 +42,6 @@ export default class MainState extends Component {
         const newState = this.state.completedTodos.filter(todo => {
             return todo.id === completedTodoID ? false : true;
         })
-        console.log()
-         
         this.setState({completedTodos : newState});        
     }
 

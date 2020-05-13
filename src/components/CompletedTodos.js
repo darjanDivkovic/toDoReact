@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 
-import ToDoItem from "./ToDoItem";
 
 export default class CompletedTodos extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   render() {
     return (
       <div className="completed-todoitems-wrapper">
@@ -15,7 +11,7 @@ export default class CompletedTodos extends Component {
           {this.props.completedTodos.map((todo) => {
             return (
              
-              <li className="todo-item-container">
+              <li className="todo-item-container" key={todo.id}>
                 <div className="content-container-completeds">
                   <h2 className="content">{todo.content}</h2>
                   <h4 className="completed-at"><span>Completed at: </span>{todo.completedTime}</h4>
