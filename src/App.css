@@ -366,3 +366,10 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--dgray);
 }
+
+.level-bar-container {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}

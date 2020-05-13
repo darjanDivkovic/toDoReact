@@ -7,6 +7,7 @@ import Header from "./Header";
 import ToDoList from "./toDoList";
 import CompletedTodos from "./CompletedTodos";
 import NavBar from "./NavBar";
+import LevelBar from "./LevelBar";
 
 export default class MainState extends Component {
   constructor() {
@@ -61,7 +62,7 @@ export default class MainState extends Component {
     // Check if user should Level up
     setTimeout(() => {
         this.levelUP();
-    },100);
+    },400);
     
   }
 
@@ -124,7 +125,6 @@ export default class MainState extends Component {
       <Router>
         <div className="main-container">
           <Header />
-    <h2>user: <span>{this.state.user.username}</span> LVL : <span>{this.state.user.currentLevel}</span></h2>
           <NavBar
             uncheckedTodos={this.state.uncheckedTodos}
             visitCompletedTodos={this.visitCompletedTodos}
@@ -142,6 +142,9 @@ export default class MainState extends Component {
               deleteCompletedTodo={this.deleteCompletedTodo}
             />
           </Route>
+          <LevelBar currentLevelGoal={this.state.user.currentLevelGoal}
+                    currentLevelProgress={this.state.user.currentLevelProgress}
+                    currentLevel={this.state.user.currentLevel}/>
         </div>
       </Router>
     );
