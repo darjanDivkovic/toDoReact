@@ -12,6 +12,7 @@ export default class CompletedTodos extends Component {
 
   render() {
     return (
+      <div className="completed-todoitems-wrapper">
       <div className="todoitems-container">
         <ul>
           {this.state.todos.map((todo) => {
@@ -32,6 +33,7 @@ export default class CompletedTodos extends Component {
             );
           })}
         </ul>
+      </div>
       </div>
     );
   }
