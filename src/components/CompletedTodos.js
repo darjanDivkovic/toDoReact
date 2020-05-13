@@ -5,9 +5,6 @@ import ToDoItem from "./ToDoItem";
 export default class CompletedTodos extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      todos: this.props.completedTodos,
-    };
   }
 
   render() {
@@ -15,7 +12,7 @@ export default class CompletedTodos extends Component {
       <div className="completed-todoitems-wrapper">
       <div className="todoitems-container">
         <ul>
-          {this.state.todos.map((todo) => {
+          {this.props.completedTodos.map((todo) => {
             return (
              
               <li className="todo-item-container">
@@ -24,7 +21,7 @@ export default class CompletedTodos extends Component {
                   <h4 className="completed-at"><span>Completed at: </span>{todo.completedTime}</h4>
                 </div>
                 <div className="todo-item-buttons-container">
-                  <button className="xButton">
+                  <button onClick={this.props.deleteCompletedTodo.bind(this, todo.id)} className="xButton">
                     delete
                   </button>
                 </div>

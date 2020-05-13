@@ -25,6 +25,7 @@ export default class MainState extends Component {
 
         this.updateMainTodoState = this.updateMainTodoState.bind(this);
         this.addToCompletedTodos = this.addToCompletedTodos.bind(this);
+        this.deleteCompletedTodo = this.deleteCompletedTodo.bind(this);
     }
     
     updateMainTodoState(newState){
@@ -34,6 +35,16 @@ export default class MainState extends Component {
     addToCompletedTodos(completedTodo){
         let newCompletedTodos = Object.assign([], this.state.completedTodos).concat(completedTodo);
         this.setState({completedTodos : newCompletedTodos});
+    }
+
+    deleteCompletedTodo(completedTodoID){
+        console.log(completedTodoID);
+        const newState = this.state.completedTodos.filter(todo => {
+            return todo.id === completedTodoID ? false : true;
+        })
+        console.log()
+         
+        this.setState({completedTodos : newState});        
     }
 
     render() {
@@ -49,7 +60,8 @@ export default class MainState extends Component {
                           />
             </Route>
             <Route path='/completed' exact>
-                 <CompletedTodos completedTodos={this.state.completedTodos} />
+                 <CompletedTodos completedTodos={this.state.completedTodos} 
+                                 deleteCompletedTodo={this.deleteCompletedTodo}/>
             </Route>
             </div>
             </Router>
