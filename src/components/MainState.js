@@ -20,12 +20,15 @@ export default class MainState extends Component {
             completedTodos: [
                 { id: nextID(), content: "Repeat", completedTime: "7:03:13 PM" },
                 { id: nextID(), content: "Repeat", completedTime: "7:03:13 PM" },
-            ]
+            ],
+
+            uncheckedTodos: 0,
         }
 
         this.updateMainTodoState = this.updateMainTodoState.bind(this);
         this.addToCompletedTodos = this.addToCompletedTodos.bind(this);
         this.deleteCompletedTodo = this.deleteCompletedTodo.bind(this);
+        this.visitCompletedTodos = this.visitCompletedTodos.bind(this);
     }
     
     updateMainTodoState(newState){
@@ -35,6 +38,10 @@ export default class MainState extends Component {
     addToCompletedTodos(completedTodo){
         let newCompletedTodos = Object.assign([], this.state.completedTodos).concat(completedTodo);
         this.setState({completedTodos : newCompletedTodos});
+
+        // Increase notification by 1
+        let increasedUncheckedTodo = this.state.uncheckedTodos + 1;
+        this.setState({uncheckedTodos : increasedUncheckedTodo});
     }
 
     deleteCompletedTodo(completedTodoID){
@@ -45,12 +52,17 @@ export default class MainState extends Component {
         this.setState({completedTodos : newState});        
     }
 
+    visitCompletedTodos(){
+        this.setState({uncheckedTodos : 0});
+    }
+
     render() {
         return (
             <Router>
             <div className="main-container">
             <Header />
-            <NavBar />
+            <NavBar uncheckedTodos={this.state.uncheckedTodos}
+                    visitCompletedTodos={this.visitCompletedTodos}/>
             <Route path='/' exact> 
                 <ToDoList todos={this.state.todos} 
                           updateMainTodoState={this.updateMainTodoState}
