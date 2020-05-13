@@ -21,6 +21,10 @@ export default class MainState extends Component {
         },
         { id: nextID(), content: "Code" },
         { id: nextID(), content: "Sleep" },
+        { id: nextID(), content: "Eat" },
+        { id: nextID(), content: "Repeat" },
+        { id: nextID(), content: "Fuk" },
+        { id: nextID(), content: "Drink" },
       ],
       completedTodos: [
         { id: nextID(), content: "Repeat", completedTime: "7:03:13 PM" },
@@ -30,7 +34,7 @@ export default class MainState extends Component {
       uncheckedTodos: 0,
 
       user: {
-        username : 'daarjantz',
+        username: "daarjantz",
         currentLevel: 0,
         currentLevelProgress: 0,
         currentLevelGoal: 0,
@@ -61,35 +65,31 @@ export default class MainState extends Component {
     this.levelProgresUp();
     // Check if user should Level up
     setTimeout(() => {
-        this.levelUP();
-    },400);
-    
+      this.levelUP();
+    }, 400);
   }
 
   levelProgresUp(callback) {
     let newCurrentLevelProgress = this.state.user.currentLevelProgress + 1;
     let newUser = Object.assign({}, this.state.user);
-    
+
     newUser.currentLevelProgress = newCurrentLevelProgress;
     console.log(newUser);
     this.setState({ user: newUser });
-
   }
 
   levelUP() {
-      let currentLevelProgress = this.state.user.currentLevelProgress;
-      let currentLevelGoal = this.state.user.currentLevelGoal;
-    if ( currentLevelProgress === currentLevelGoal ) {
-        
-        let newLevel = this.state.user.currentLevel + 1;
-        let newUser = Object.assign({}, this.state.user);
-        
-        newUser.currentLevel = newLevel;
-        newUser.currentLevelProgress = 0;
-        newUser.currentLevelGoal = this.fibonacci(newUser.currentLevel);
+    let currentLevelProgress = this.state.user.currentLevelProgress;
+    let currentLevelGoal = this.state.user.currentLevelGoal;
+    if (currentLevelProgress === currentLevelGoal) {
+      let newLevel = this.state.user.currentLevel + 1;
+      let newUser = Object.assign({}, this.state.user);
 
-        this.setState({user : newUser});
-        
+      newUser.currentLevel = newLevel;
+      newUser.currentLevelProgress = 0;
+      newUser.currentLevelGoal = this.fibonacci(newUser.currentLevel);
+
+      this.setState({ user: newUser });
     }
   }
 
@@ -117,7 +117,7 @@ export default class MainState extends Component {
     let newUser = Object.assign({}, this.state.user);
     newUser.currentLevelGoal = newCurrentLevelGoal;
 
-     this.setState({ user : newUser });
+    this.setState({ user: newUser });
   }
 
   render() {
@@ -142,9 +142,11 @@ export default class MainState extends Component {
               deleteCompletedTodo={this.deleteCompletedTodo}
             />
           </Route>
-          <LevelBar currentLevelGoal={this.state.user.currentLevelGoal}
-                    currentLevelProgress={this.state.user.currentLevelProgress}
-                    currentLevel={this.state.user.currentLevel}/>
+          <LevelBar
+            currentLevelGoal={this.state.user.currentLevelGoal}
+            currentLevelProgress={this.state.user.currentLevelProgress}
+            currentLevel={this.state.user.currentLevel}
+          />
         </div>
       </Router>
     );

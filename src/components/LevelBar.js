@@ -11,7 +11,7 @@ const Track = styled.div`
 const Bar = styled.div`
   width: ${(props) => props.percentage}%;
   height: 100%;
-  background-color: #ffca28;
+  background: linear-gradient(90deg, rgba(254,100,100,1) 0%, rgba(255,202,40,1) 52%, rgba(92,184,92,1) 100%);
   border-radius: 8px;
   transition: width 0.3s ease-in-out;
 `;
@@ -34,7 +34,7 @@ export default function LevelBar(props) {
       <Track>
         <Bar percentage={calculatePercentage()} />
       </Track>
-      <h2>{props.currentLevelGoal}</h2>
+      <h2 style={{float: "right", fontSize: "15px", color: "#ffca28"}}>to next lvl: {props.currentLevelGoal-props.currentLevelProgress}</h2>
     </div>
   );
 }
