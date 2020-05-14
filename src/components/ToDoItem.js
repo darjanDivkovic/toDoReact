@@ -68,7 +68,7 @@ export default class ToDoItem extends Component {
             onClick={this.props.deleteTodo.bind(this, this.props.id)}
             className="xButton"
           >
-            delete
+            X
           </button>
         </div>
       </li>

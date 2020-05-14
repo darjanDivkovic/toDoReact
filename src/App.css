@@ -7,11 +7,13 @@
   --dgray: #212224;
   --grey: #27282c;
   --lgrey: #a8a9ab;
-  --lightblue: #38ddcd;
+  --lightblue: #1e77ef;
+  --lightpurple: #786bec;
   --white: #f9fafc;
   --red: #fe6464;
   --orange: #ffca28;
   --green: #5cb85c;
+
 }
 
 body {
@@ -41,27 +43,30 @@ body {
 .header-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  font-size: 20px;
 }
+
 
 .header {
   margin-left: 60px;
   margin-top: 30px;
-  font-size: 35px;
+  
 }
 
 .clock {
   margin-left: auto;
   margin-right: 60px;
   margin-top: 30px;
+  
 }
 
 .link-container {
   background-color: var(--dgray);
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(5,1fr);
   position: relative;
   width: 95%;
-  height: 60px;
+  height: 50px;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
@@ -98,8 +103,6 @@ body {
   }
 }
 
-
-
 .link {
   justify-self: center;
   font-size: 17px;
@@ -120,6 +123,39 @@ body {
   color: var(--white);
 }
 
+.colors-container {
+ display: flex;
+ margin-left: auto;
+ margin-right: 20px;
+}
+
+.color {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  
+}
+
+.color:nth-child(1){
+  background-color: var(--red);
+}
+
+.color:nth-child(2){
+  background-color: var(--lightblue);
+}
+
+.color:nth-child(3){
+  background-color: var(--green);
+}
+
+.color:nth-child(4){
+  background-color: var(--orange);
+}
+
+
+
+
 @media only screen and (max-width: 600px) {
   .header-container {
     grid-template-columns: 1fr;
@@ -139,16 +175,19 @@ body {
 }
 
 .todo-list-container {
-  margin-top: 60px;
-  width: 60%;
-  margin-left: auto;
+  margin-top: 40px;
+  width: 70%;
+  background: var(--dgray);
+  border-radius: 10px;
   margin-right: auto;
+  margin-left: 70px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 30px auto;
 }
 
 .add-todo {
+  margin-top: 20px;
   height: 100px;
   display: flex;
   justify-content: center;
@@ -160,16 +199,19 @@ button {
   font-weight: bolder;
   font-size: 13px;
   outline: none;
+  border: 2px solid var(--lightblue);
+  color: var(--lightblue);
   cursor: pointer;
   height: 40px;
   border-radius: 10px;
   transition: 0.5s;
 }
 
+
 .todo-list-container input {
   width: 80%;
   height: 40px;
-  background-color: var(--dgray);
+  background-color: var(--grey);
   border-radius: 10px;
   border: none;
   color: var(--gray);
@@ -181,7 +223,7 @@ button {
   margin-left: 10px;
   border: 2px solid var(--lightblue);
   color: var(--lightblue);
-  background-color: var(--dgray);
+  background-color: var(--gradient);
 }
 
 .btn-add-todo:hover {
@@ -191,7 +233,7 @@ button {
 }
 
 .todoitems-container {
-  margin-top: 30px;
+  margin-top: 60px;
   height: 300px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -216,7 +258,7 @@ button {
   margin-left: auto;
   margin-right: auto;
   height: auto;
-  border-bottom: 3px solid var(--dgray);
+  border-bottom: 1px solid var(--grey);
 }
 
 .todo-item-container {
@@ -262,32 +304,29 @@ button {
 }
 
 .checkButton {
-  border: 2px solid var(--green);
   margin-right: 20px;
   margin-top: 7px;
   line-height: 1;
   font-size: 17px;
-  color: var(--green);
   transition: 0.5s;
 }
 
-.checkButton:hover {
-  background-color: var(--green);
+.edit:hover , .checkButton:hover {
+  background-color: var(--lightblue);
   color: var(--white);
   transform: scale(1.2);
 }
 
+
 .xButton {
   border: 2px solid var(--red);
   color: var(--red);
-  width: 70px;
+  width: 40px;
   margin-right: 20px;
   margin-top: 10px;
 }
 
 .edit {
-  border: 2px solid var(--orange);
-  color: var(--orange);
   width: 70px;
   margin-top: 10px;
   margin-right: 10px;
@@ -299,11 +338,6 @@ button {
   transform: scale(1.2);
 }
 
-.edit:hover {
-  background-color: var(--orange);
-  color: var(--white);
-  transform: scale(1.2);
-}
 
 @media only screen and (max-width: 600px) {
   .todo-list-container {
@@ -369,8 +403,9 @@ button {
 }
 
 .level-bar-container {
+  margin-top: 40px;
   text-align: center;
-  margin-left: auto;
+  margin-left: 200px;
   margin-right: auto;
   width: 55%;
 }

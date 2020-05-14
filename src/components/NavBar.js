@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+import Colors from './Colors';
+
 export default function NavBar(props) {
 
     
@@ -18,6 +20,7 @@ export default function NavBar(props) {
             </div>
             <Link to='/' className='link'>Achivements</Link>
             <Link to='/' className='link'>About</Link>
+            <Colors />
         </div>
     )
 }
