@@ -16,6 +16,8 @@ export default function NavBar(props) {
             <Link to='/completed' onClick={props.visitCompletedTodos} className='link'>Completed todo</Link>
             {notification}
             </div>
+            <Link to='/' className='link'>Achivements</Link>
+            <Link to='/' className='link'>About</Link>
         </div>
     )
 }
