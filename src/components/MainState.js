@@ -8,6 +8,7 @@ import ToDoList from "./toDoList";
 import CompletedTodos from "./CompletedTodos";
 import NavBar from "./NavBar";
 import LevelBar from "./LevelBar";
+import UserProfile from "./UserProfile";
 
 export default class MainState extends Component {
   constructor() {
@@ -35,6 +36,7 @@ export default class MainState extends Component {
 
       user: {
         username: "daarjantz",
+        picture: '',
         currentLevel: 0,
         currentLevelProgress: 0,
         currentLevelGoal: 0,
@@ -147,6 +149,7 @@ export default class MainState extends Component {
             currentLevelProgress={this.state.user.currentLevelProgress}
             currentLevel={this.state.user.currentLevel}
           />
+          <UserProfile />
         </div>
       </Router>
     );

@@ -138,19 +138,21 @@ body {
 }
 
 .color:nth-child(1){
-  background-color: var(--red);
-}
-
-.color:nth-child(2){
   background-color: var(--lightblue);
 }
 
-.color:nth-child(3){
-  background-color: var(--green);
+.color:nth-child(4){
+  background-color: var(--dgray);
+  border: 1px solid var(--grey);
 }
 
-.color:nth-child(4){
-  background-color: var(--orange);
+.color:nth-child(3){
+  background-color: var(--grey);
+  
+}
+
+.color:nth-child(2){
+  background-color: var(--white);
 }
 
 
@@ -234,7 +236,7 @@ button {
 
 .todoitems-container {
   margin-top: 60px;
-  height: 300px;
+  height: 320px;
   overflow-x: hidden;
   overflow-y: auto;
  
@@ -405,7 +407,18 @@ button {
 .level-bar-container {
   margin-top: 40px;
   text-align: center;
-  margin-left: 200px;
+  margin-left: 170px;
   margin-right: auto;
   width: 55%;
+}
+
+.user-profile-container {
+  height: 350px;
+  width: 300px;
+  background-color: var(--dgray);
+  position: absolute;
+  top: 237px;
+  border-radius: 10px;
+  left: auto;
+  right: 120px;
 }
