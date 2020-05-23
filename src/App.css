@@ -53,11 +53,16 @@ body {
 
 .login-container {
   border: 2px solid white;
-  width: 50%;
+  width: 100%;
 }
 
-.login-box {
-  width: 70%;
+.register-container {
+  width: 100%;
+  border: 2px solid white;
+}
+
+.login-box , .register-box {
+  width: 50%;
   background-color: var(--grey);
   display: flex;
   flex-direction: column;
@@ -69,7 +74,7 @@ body {
   border-radius: 10px;
 }
 
-.login-box input{
+.login-box input, .register-box input{
   width: 60%;
   margin: 10px 0;
   height: 40px;
@@ -80,9 +85,15 @@ body {
   color: var(--white);
 }
 
-.login-box button{
+.login-box button, .register-box button{
   margin-top: 15px;
   width: 30%;
+}
+
+.login-box button:hover, .register-box button:hover {
+  transform: scale(1.2);
+  background-color: var(--lightblue);
+  color: white;
 }
 
 .main-container {
