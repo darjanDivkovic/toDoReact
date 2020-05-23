@@ -30,6 +30,7 @@ export default class Login extends Component {
             <input type='text' name='usernameInput' value={this.state.usernameInput} onChange={this.handleChange}/>
             <label>Password</label>
             <input type='text' name='passwordInput' value={this.state.passwordInput} onChange={this.handleChange}/>
+            <p>{this.props.serverMsg}</p>
             <button onClick={this.handleClick}>Login</button>
             </div>
             </div>

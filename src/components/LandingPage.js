@@ -12,7 +12,8 @@ export default class LandingPage extends Component {
             <div className='landing-page-container'>
                 <h1 className='lp-header'>todoapp.</h1>
                 <div className='loading-page-inner-container'>
-                    <Login handleLogin={this.props.handleLogin}/>
+                    <Login handleLogin={this.props.handleLogin}
+                           serverMsg={this.props.serverMsg}/>
                 </div>
             </div>
         )
