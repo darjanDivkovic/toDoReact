@@ -1,15 +1,38 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function Login() {
-    return (
-        <div className='login-container'>
+export default class Login extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            usernameInput : '',
+            passwordInput : '',
+        }
+        this.handleChange=this.handleChange.bind(this);
+        this.handleClick=this.handleClick.bind(this);
+    }
+
+    handleChange(e){
+        this.setState({[e.target.name] : e.target.value});
+    }
+
+    handleClick(){
+        this.props.handleLogin(this.state.usernameInput, this.state.passwordInput);
+
+        // Clear values
+        this.setState({usernameInput : '', passwordInput : ''});
+    }
+
+    render() {
+        return (
+            <div className='login-container'>
             <div class='login-box'>
             <label>Username</label>
-            <input type='text' />
+            <input type='text' name='usernameInput' value={this.state.usernameInput} onChange={this.handleChange}/>
             <label>Password</label>
-            <input type='text' />
-            <button>Login</button>
+            <input type='text' name='passwordInput' value={this.state.passwordInput} onChange={this.handleChange}/>
+            <button onClick={this.handleClick}>Login</button>
             </div>
-        </div>
-    )
+            </div>
+        )
+    }
 }
