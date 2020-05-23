@@ -7,7 +7,7 @@ export default class LandingPage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            toggler : false,
+            toggler : true,
         }
         this.toggle = this.toggle.bind(this);
     }

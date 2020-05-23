@@ -13,7 +13,6 @@
   --red: #fe6464;
   --orange: #ffca28;
   --green: #5cb85c;
-
 }
 
 body {
@@ -39,7 +38,6 @@ body {
 
 .loading-page-inner-container {
   margin-top: 30px;
-  border: 2px solid white;
   height: 600px;
   text-align: center;
   display: flex;
@@ -51,30 +49,71 @@ body {
   font-size: 52px;
 }
 
-.login-container {
-  border: 2px solid white;
-  width: 100%;
+label {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
+.toggler-div {
+  display: flex;
+  flex-direction: row;
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.toggler-div button {
+  border: 2px solid var(--orange);
+  color: var(--orange);
+}
+
+.toggler-div button:hover {
+  transform: scale(1.2);
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.toggler-div p {
+  margin-right: 15px;
+  font-size: small;
+}
+
+.login-container,
 .register-container {
-  width: 100%;
-  border: 2px solid white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
-.login-box , .register-box {
-  width: 50%;
+.login-box,
+.register-box {
+  width: 100%;
   background-color: var(--grey);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+  
   margin-top: 50px;
-  padding: 40px 10px;
+  padding: 40px 0px;
   border-radius: 10px;
+  animation: appear 0.5s linear;
 }
 
-.login-box input, .register-box input{
+@keyframes appear {
+  0% {
+    opacity: 0;
+    margin-top: 80px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 50px;
+  }
+}
+
+.login-box input,
+.register-box input {
   width: 60%;
   margin: 10px 0;
   height: 40px;
@@ -85,12 +124,14 @@ body {
   color: var(--white);
 }
 
-.login-box button, .register-box button{
+.login-box button,
+.register-box button {
   margin-top: 15px;
   width: 30%;
 }
 
-.login-box button:hover, .register-box button:hover {
+.login-box button:hover,
+.register-box button:hover {
   transform: scale(1.2);
   background-color: var(--lightblue);
   color: white;
@@ -111,24 +152,21 @@ body {
   font-size: 20px;
 }
 
-
 .header {
   margin-left: 60px;
   margin-top: 30px;
-  
 }
 
 .clock {
   margin-left: auto;
   margin-right: 60px;
   margin-top: 30px;
-  
 }
 
 .link-container {
   background-color: var(--dgray);
   display: grid;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: repeat(5, 1fr);
   position: relative;
   width: 95%;
   height: 50px;
@@ -136,7 +174,6 @@ body {
   margin-right: auto;
   align-items: center;
   border-radius: 10px;
-
 }
 
 .completed-link-container {
@@ -189,9 +226,9 @@ body {
 }
 
 .colors-container {
- display: flex;
- margin-left: auto;
- margin-right: 20px;
+  display: flex;
+  margin-left: auto;
+  margin-right: 20px;
 }
 
 .color {
@@ -199,29 +236,24 @@ body {
   height: 30px;
   width: 30px;
   margin-right: 10px;
-  
 }
 
-.color:nth-child(1){
+.color:nth-child(1) {
   background-color: var(--lightblue);
 }
 
-.color:nth-child(4){
+.color:nth-child(4) {
   background-color: var(--dgray);
   border: 1px solid var(--grey);
 }
 
-.color:nth-child(3){
+.color:nth-child(3) {
   background-color: var(--grey);
-  
 }
 
-.color:nth-child(2){
+.color:nth-child(2) {
   background-color: var(--white);
 }
-
-
-
 
 @media only screen and (max-width: 600px) {
   .header-container {
@@ -274,7 +306,6 @@ button {
   transition: 0.5s;
 }
 
-
 .todo-list-container input {
   width: 80%;
   height: 40px;
@@ -304,11 +335,9 @@ button {
   height: 320px;
   overflow-x: hidden;
   overflow-y: auto;
- 
 }
 
 .completed-todoitems-wrapper {
-
   width: 60%;
   margin-left: auto;
   margin-right: auto;
@@ -378,12 +407,12 @@ button {
   transition: 0.5s;
 }
 
-.edit:hover , .checkButton:hover {
+.edit:hover,
+.checkButton:hover {
   background-color: var(--lightblue);
   color: var(--white);
   transform: scale(1.2);
 }
-
 
 .xButton {
   border: 2px solid var(--red);
@@ -404,7 +433,6 @@ button {
   color: var(--white);
   transform: scale(1.2);
 }
-
 
 @media only screen and (max-width: 600px) {
   .todo-list-container {
@@ -493,7 +521,6 @@ button {
   right: 120px;
   display: flex;
   flex-direction: column;
-  
 }
 
 .info {
@@ -511,16 +538,14 @@ button {
   margin-top: 30px;
   margin-bottom: 0px;
   width: 60px;
-  height: 60  px;
+  height: 60 px;
   border-radius: 50%;
   border: 2px solid var(--grey);
-  
 }
 
 .info-username {
   font-size: 22px;
   font-weight: bold;
-
 }
 
 .utility-buttons {

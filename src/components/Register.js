@@ -18,8 +18,10 @@ export default class Register extends Component {
                     <input type='text'></input>
                     <button>Register</button>
                 </div>
+                <div class='toggler-div'>
                 <p>Already have an Account ?</p>
                 <button onClick={this.props.toggle}>Login</button>
+                </div>
             </div>
         )
     }

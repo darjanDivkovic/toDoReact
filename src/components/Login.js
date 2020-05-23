@@ -33,8 +33,10 @@ export default class Login extends Component {
             <p>{this.props.serverMsg}</p>
             <button onClick={this.handleClick}>Login</button>
             </div>
+            <div class='toggler-div'>
             <p>Don't have an Account ?</p>
             <button onClick={this.props.toggle}>Register</button>
+            </div>
             </div>
         )
     }
