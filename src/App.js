@@ -1,12 +1,23 @@
 import React from 'react';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 
-import MainState from './components/MainState'
+import HomePage from './components/HomePage';
+import LandingPage from './components/LandingPage';
 
 function App() {
   return (
     <div className="App">
-      <MainState />
+      <Router>
+      <Route path='/home' exact>
+      <HomePage />
+      </Route>
+      <LandingPage path='/' exact/>
+      </Router>
     </div>
   );
 }

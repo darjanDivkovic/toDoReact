@@ -36,7 +36,6 @@ export default class MainState extends Component {
 
       user: {
         username: "daarjantz",
-        picture: '',
         currentLevel: 0,
         currentLevelProgress: 0,
         currentLevelGoal: 0,
@@ -131,7 +130,7 @@ export default class MainState extends Component {
             uncheckedTodos={this.state.uncheckedTodos}
             visitCompletedTodos={this.visitCompletedTodos}
           />
-          <Route path="/" exact>
+          <Route path="/home" exact>
             <ToDoList
               todos={this.state.todos}
               updateMainTodoState={this.updateMainTodoState}
@@ -144,12 +143,19 @@ export default class MainState extends Component {
               deleteCompletedTodo={this.deleteCompletedTodo}
             />
           </Route>
+          <div className='level-bar-main'>
           <LevelBar
             currentLevelGoal={this.state.user.currentLevelGoal}
             currentLevelProgress={this.state.user.currentLevelProgress}
             currentLevel={this.state.user.currentLevel}
           />
-          <UserProfile />
+          </div>
+          <UserProfile username={this.state.user.username}
+                       lvl={this.state.user.currentLevel}
+                        currentLevelGoal={this.state.user.currentLevelGoal}
+                        currentLevelProgress={this.state.user.currentLevelProgress}
+                        currentLevel={this.state.user.currentLevel}
+                        />
         </div>
       </Router>
     );
