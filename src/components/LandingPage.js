@@ -18,12 +18,13 @@ export default class LandingPage extends Component {
 
     render() {
     let formToDisplay;
-    if(this.state.toggler){
-        formToDisplay = <Login handleLogin={this.props.handleLogin}
-                               serverMsg={this.props.serverMsg}
-                               toggle={this.toggle}/> 
+    if(this.state.toggler){ 
+        formToDisplay = <Login     handleLogin={this.props.handleLogin}
+                                   serverMsg={this.props.serverMsg}
+                                   toggle={this.toggle}/> 
     }
-    else formToDisplay = <Register toggle={this.toggle}/>;
+    else formToDisplay = <Register toggle={this.toggle}
+                                   handleRegister={this.props.handleRegister}/>;
 
         return (
             <div className='landing-page-container'>

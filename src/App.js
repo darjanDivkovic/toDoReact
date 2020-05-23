@@ -21,7 +21,7 @@ export default class App extends React.Component {
   }
 
   renderRedirect(){
-    return this.state.userVerified ? <Redirect to='/home' /> : null;
+    return this.state.userVerified ? <Redirect to='/home' /> : <Redirect to='/' />;
   }
 
   handleLogin(username, password){
@@ -30,17 +30,26 @@ export default class App extends React.Component {
          .then(res => this.setState({userVerified : res.data.verified, serverMsg : res.data.msg}));
   }
 
+  handleRegister(username, password, retypedPassword){
+    axios.post('http://localhost:8000/register',{username, password, retypedPassword})
+         .then(res=> console.log(res));
+  }
+
   render() {
     return (
       <div className="App">
       <Router>
+      {this.renderRedirect()}
       <Route path='/home' exact>
       <HomePage />
       </Route>
-      {this.renderRedirect()}
-      <LandingPage path='/' exact
+      <Route path='/' exact>
+      
+      <LandingPage 
                    handleLogin={this.handleLogin}
+                   handleRegister={this.handleRegister}
                    serverMsg={this.state.serverMsg}/>
+      </Route>
       </Router>
     </div>
     )
