@@ -8,10 +8,10 @@ import {
 
 import HomePage from './components/HomePage';
 import LandingPage from './components/LandingPage';
-
-function App() {
-  return (
-    <div className="App">
+export default class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
       <Router>
       <Route path='/home' exact>
       <HomePage />
@@ -19,7 +19,7 @@ function App() {
       <LandingPage path='/' exact/>
       </Router>
     </div>
-  );
+    )
+  }
 }
 
-export default App;

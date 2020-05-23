@@ -54,16 +54,34 @@ body {
 .login-container {
   border: 2px solid white;
   width: 50%;
+}
+
+.login-box {
+  width: 70%;
+  background-color: var(--grey);
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 40px 10px;
+  border-radius: 10px;
 }
 
-.login-container input{
+.login-box input{
   width: 60%;
+  margin: 10px 0;
+  height: 40px;
+  background-color: var(--dgray);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  color: var(--white);
 }
 
-.login-container button{
+.login-box button{
+  margin-top: 15px;
   width: 30%;
 }
 
